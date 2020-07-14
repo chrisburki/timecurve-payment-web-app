@@ -1,0 +1,18 @@
+<section class="accounts">
+    <div fxLayout="row wrap" fxLayoutAlign="center" fxLayoutGap="10px grid">
+        <div fxFlex.xs="100%" fxFlex="300px" *ngFor="let account of accountList">
+            <mat-card >
+                <mat-card-title>
+                    {{account.currency}} {{account.amount}}
+                </mat-card-title>
+                <mat-card-content>
+                    {{account.description}}
+                </mat-card-content>
+                <mat-card-actions>
+                    <div fxFlex></div>
+                    <button type="submit" mat-flat-button color="primary" (click)="onSubmitAccount()">Modify</button>
+                </mat-card-actions>
+            </mat-card>
+        </div>
+    </div>
+</section>

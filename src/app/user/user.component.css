@@ -1,0 +1,24 @@
+.user {
+    text-align: left;
+    background-color: lavender;
+    height: 200px;
+    padding: 20px;
+}
+
+.profile-pic{
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+}
+
+#pic {
+    height: 80px;
+}
+
+#name {
+    height: 25px;
+}
+
+#title {
+    height: 25px;
+}

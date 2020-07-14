@@ -1,0 +1,52 @@
+<section class="payment-entry-form">
+    <form fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px" #f="ngForm" (ngSubmit)="onSubmit(f)">
+        <mat-form-field>
+            <input 
+            type="number" 
+            matInput
+            matInput 
+            placeholder="Amount" 
+            ngModel 
+            name="amount"
+            required
+            #amountInput="ngModel">
+            <mat-error *ngIf="amountInput.hasError('required')">Field must not be empty</mat-error>
+            <mat-error *ngIf="!amountInput.hasError('required')">value is greater than 10000</mat-error>
+        </mat-form-field>
+        <mat-form-field hintLabel="Enter ISO Code">
+            <input 
+            type="text"
+            matInput 
+            placeholder="Currency" 
+            ngModel 
+            name="currency"
+            required>
+        </mat-form-field>
+        <mat-form-field hintLabel="Enter Value Date">
+            <input 
+            matInput
+            placeholder="Value Date" 
+            [matDatepicker]="picker"
+            ngModel 
+            name="value-date"
+            required>
+            <mat-datepicker-toggle 
+            matSuffix 
+            [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        <mat-form-field hintLabel="Destination IBAN">
+            <input type="text" 
+            matInput 
+            placeholder="Iban" 
+            ngModel 
+            name="iban"
+            minlength="10"
+            #ibanInput="ngModel">
+            <mat-hint align="end">current length: {{ ibanInput.value?.length }}</mat-hint>
+        </mat-form-field>
+        <mat-checkbox ngModel name="agree" required color="primary">Agree to Terms and Conditions.</mat-checkbox>
+        <br>
+        <button type="submit" mat-raised-button color="primary" [disabled]="f.invalid">Submit</button>
+    </form>
+</section>

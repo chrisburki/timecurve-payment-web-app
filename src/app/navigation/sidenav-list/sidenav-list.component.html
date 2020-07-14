@@ -1,0 +1,28 @@
+<mat-nav-list class="sideNav">
+    <a mat-list-item routerLink="/payment" (click)="onClose()" *ngIf="isAuth">
+        <mat-icon>payment</mat-icon>
+        <span class="nav-caption">Payments</span>
+    </a>
+    <a mat-list-item routerLink="/account" (click)="onClose()" *ngIf="isAuth">
+        <mat-icon>account_balance_wallet</mat-icon>
+        <span class="nav-caption">Accounts</span>
+    </a>
+    <a mat-list-item routerLink="/booking" (click)="onClose()" *ngIf="isAuth">
+        <mat-icon>list</mat-icon>
+        <span class="nav-caption">Bookings</span>
+    </a>
+    <a mat-list-item routerLink="/signup" (click)="onClose()" *ngIf="!isAuth">
+        <mat-icon>face</mat-icon>
+        <span class="nav-caption">Signup</span>
+    </a>
+    <a mat-list-item routerLink="/login" (click)="onClose()" *ngIf="!isAuth">
+        <mat-icon>input</mat-icon>
+        <span class="nav-caption">Login</span>
+    </a>
+    <mat-list-item>
+        <button mat-icon-button (click)="onLogout()" *ngIf="isAuth">
+            <mat-icon>eject</mat-icon>
+            <span class="nav-caption">Logout</span>
+        </button>
+    </mat-list-item>
+</mat-nav-list>
