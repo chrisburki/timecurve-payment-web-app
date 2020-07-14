@@ -12,8 +12,8 @@ export class PaymentListComponent implements OnInit, AfterViewInit {
   displayedColumns = ['valueDate', 'iban', 'amount', 'currency', 'text'];
   dataSource = new MatTableDataSource<Payment>();
 
-  @ViewChild(MatSort, { static: false }) sort: MatSort;
-  @ViewChild(MatPaginator, { static: false }) paginator: MatPaginator;
+  @ViewChild(MatSort) sort: MatSort;
+  @ViewChild(MatPaginator) paginator: MatPaginator;
 
   constructor(private paymentService: PaymentService) { }
 
