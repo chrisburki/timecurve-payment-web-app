@@ -7,10 +7,12 @@ a {
     color: white;
 }
 
+/*
 a:hover,
 a:active {
-    color: lightgray;
+    color: blue;
 }
+*/
 
 .nav-caption {
     display: inline-block;

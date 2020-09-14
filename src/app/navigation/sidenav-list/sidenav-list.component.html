@@ -11,6 +11,11 @@
         <mat-icon>list</mat-icon>
         <span class="nav-caption">Bookings</span>
     </a>
+    <a mat-list-item routerLink="/login" (click)="onLogout()" *ngIf="isAuth">
+        <mat-icon>eject</mat-icon>
+        <span class="nav-caption">Logout</span>
+    </a>
+
     <a mat-list-item routerLink="/signup" (click)="onClose()" *ngIf="!isAuth">
         <mat-icon>face</mat-icon>
         <span class="nav-caption">Signup</span>
@@ -19,10 +24,4 @@
         <mat-icon>input</mat-icon>
         <span class="nav-caption">Login</span>
     </a>
-    <mat-list-item>
-        <button mat-icon-button (click)="onLogout()" *ngIf="isAuth">
-            <mat-icon>eject</mat-icon>
-            <span class="nav-caption">Logout</span>
-        </button>
-    </mat-list-item>
 </mat-nav-list>
